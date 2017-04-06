@@ -1,5 +1,6 @@
 require 'pry'
 require 'csv'
+require 'sunlight/congress'
 require './lib/sanitize_module'
 
 class EventManager
