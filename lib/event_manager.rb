@@ -18,5 +18,3 @@ class EventManager
     end
   end
 end
-
-EventManager.new.output
