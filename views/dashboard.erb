@@ -1,0 +1,77 @@
+<html>
+<head>
+  <meta charset='utf-8'>
+  <title>Our Data!</title>
+</head>
+<body>
+
+<canvas id="hours" width="400" height="400"></canvas>
+<canvas id="days" width="400" height="400"></canvas>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+<script>
+var hours = document.getElementById("hours");
+var hours_data = {
+    labels: <%= hours_labels %>,
+    datasets: [
+        {
+            label: "My First dataset",
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1,
+            data: <%= hours_data %>
+        }
+    ]
+};
+var myHourChart = new Chart(hours, {
+    type: 'bar',
+    data: hours_data
+});
+var days = document.getElementById("days");
+var days_data = {
+    labels: <%= days_labels %>,
+    datasets: [
+        {
+            label: "My First dataset",
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1,
+            data: <%= days_data %>
+        }
+    ]
+};
+var myDaysChart = new Chart(days, {
+    type: 'bar',
+    data: days_data
+});
+</script>
+</body>
+</html>
